@@ -2,7 +2,7 @@ const cheerio = require('cheerio');
 const request = require('request');
 
 const URL =
-	'https://classifieds.ksl.com/search/?keyword=futon&zip=84101&miles=10&priceFrom=%240&priceTo=%24150&hasPhotos%5B%5D=Has+Photos&marketType%5B%5D=Sale&postedTimeFQ%5B%5D=1DAY&city=&state=&sort=0';
+	'https://classifieds.ksl.com/search/?keyword=futon&zip=84101&miles=25&priceFrom=%240&priceTo=%24150&hasPhotos%5B%5D=Has+Photos&marketType%5B%5D=Sale&postedTimeFQ%5B%5D=1DAY&city=&state=&sort=0';
 
 request(URL, (error, response, body) => {
   console.log('error:', error);
@@ -22,7 +22,10 @@ request(URL, (error, response, body) => {
 					// change the format to be json
           const startIndex = searchResults.indexOf('(')
           let results = eval(searchResults.substring(startIndex))
-          console.log(results)
+					console.log(results);
+					
+					let title = results.listings[0].title;
+					console.log(title);
         }
     }
   });
