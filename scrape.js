@@ -46,8 +46,8 @@ request(URL, (error, response, body) => {
 					let itemName = listItems.map(el => el.title);
 					console.log(itemName);
 
-					let price = listItems.map(el => el.price);
-					console.log(price);
+					// let price = listItems.map(el => el.price);
+					// console.log(price);
         }
     }
   });
